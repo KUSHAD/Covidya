@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+	IonApp,
+	IonRouterOutlet,
+	IonTabBar,
+	IonTabButton,
+	IonTabs,
+	IonIcon,
+} from "@ionic/react";
+import { IonReactRouter } from "@ionic/react-router";
+import "@ionic/react/css/core.css";
+import "@ionic/react/css/display.css";
+import "@ionic/react/css/flex-utils.css";
+import "@ionic/react/css/float-elements.css";
+import "@ionic/react/css/normalize.css";
+import "@ionic/react/css/padding.css";
+import "@ionic/react/css/structure.css";
+import "@ionic/react/css/text-alignment.css";
+import "@ionic/react/css/text-transformation.css";
+import "@ionic/react/css/typography.css";
+import React from "react";
+import { earth } from "ionicons/icons";
+import { Route, Redirect } from "react-router";
+import IndiaCase from "./pages/IndiaCase";
+import Precautions from "./pages/Precautions";
+import StateWiseData from "./pages/StateWiseData";
+import "./theme/variables.css";
+export default function App() {
+	return (
+		<IonApp>
+			<IonReactRouter>
+				<IonTabs>
+					<IonRouterOutlet>
+						<Route path='/cases' component={IndiaCase} exact />
+						<Route path='/states' component={StateWiseData} exact />
+						<Route exact path='/precautions' component={Precautions} />
+						<Route exact path='/' render={() => <Redirect to='/cases' />} />
+					</IonRouterOutlet>
+					<IonTabBar slot='bottom'>
+						<IonTabButton tab='tab1' href='/cases'>
+							<IonIcon icon={earth} />
+						</IonTabButton>
+						<IonTabButton tab='tab2' href='/states'>
+							<i
+								className='fas fa-virus'
+								style={{
+									fontSize: 25,
+								}}></i>
+						</IonTabButton>
+					</IonTabBar>
+				</IonTabs>
+			</IonReactRouter>
+		</IonApp>
+	);
 }
-
-export default App;
