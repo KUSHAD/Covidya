@@ -20,6 +20,7 @@ export default function Precautions() {
 				</IonToolbar>
 			</IonHeader>
 			<iframe
+				frameBorder={0}
 				style={{
 					height: "100vh",
 					width: "100vw",

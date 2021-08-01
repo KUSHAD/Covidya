@@ -18,11 +18,12 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/typography.css";
 import React from "react";
-import { earth } from "ionicons/icons";
+import { earth, informationCircle } from "ionicons/icons";
 import { Route, Redirect } from "react-router";
 import IndiaCase from "./pages/IndiaCase";
 import Precautions from "./pages/Precautions";
 import StateWiseData from "./pages/StateWiseData";
+import Resources from "./pages/Resources";
 import "./theme/variables.css";
 export default function App() {
 	return (
@@ -32,7 +33,8 @@ export default function App() {
 					<IonRouterOutlet>
 						<Route path='/cases' component={IndiaCase} exact />
 						<Route path='/states' component={StateWiseData} exact />
-						<Route exact path='/precautions' component={Precautions} />
+						<Route path='/resources' component={Resources} exact />
+						<Route path='/precautions' component={Precautions} exact />
 						<Route exact path='/' render={() => <Redirect to='/cases' />} />
 					</IonRouterOutlet>
 					<IonTabBar slot='bottom'>
@@ -45,6 +47,9 @@ export default function App() {
 								style={{
 									fontSize: 25,
 								}}></i>
+						</IonTabButton>
+						<IonTabButton tab='tab3' href='/resources'>
+							<IonIcon icon={informationCircle} />
 						</IonTabButton>
 					</IonTabBar>
 				</IonTabs>

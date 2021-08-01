@@ -5,7 +5,7 @@ import {
 	IonToolbar,
 	IonTitle,
 	IonContent,
-	IonToast,
+	IonAlert,
 	IonText,
 	IonCard,
 	IonCardHeader,
@@ -152,8 +152,19 @@ export default function IndiaCase() {
 						</IonButton>
 					</IonCardContent>
 				</IonCard>
+				<IonAlert
+					isOpen={error ? true : false}
+					buttons={[
+						{
+							text: "Close",
+							handler: () => setError(""),
+						},
+					]}
+					header='There was an error'
+					message={error}
+					duration={3000}
+				/>
 			</IonContent>
-			<IonToast isOpen={error} message={error} duration={3000} />
 		</IonPage>
 	);
 }
