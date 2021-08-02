@@ -76,11 +76,14 @@ export default function Auth() {
 						...auth,
 						user: uid,
 						timesStamp: time,
+						avatar: `https://avatars.dicebear.com/api/human/${uid}.svg`,
 					})
 					.then(() => {
 						setSuccess("Added Story Sucessfully");
 						setUser();
 						history.push("/blogs");
+						window.appVerifier.clear();
+						window.location.reload();
 					})
 					.catch((e) => setError(e.message));
 			})

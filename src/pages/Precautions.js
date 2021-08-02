@@ -13,8 +13,12 @@ export default function Precautions() {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
-					<IonButton slot='start' href='/' fill='clear'>
-						<IonBackButton icon={chevronBack} text='Back' defaultHref='/' />
+					<IonButton slot='start' href='/cases' fill='clear'>
+						<IonBackButton
+							icon={chevronBack}
+							text='Back'
+							defaultHref='/cases'
+						/>
 					</IonButton>
 					<IonTitle>Covid-19 precautions</IonTitle>
 				</IonToolbar>

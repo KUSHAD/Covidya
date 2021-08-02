@@ -26,6 +26,7 @@ import StateWiseData from "./pages/StateWiseData";
 import Blogs from "./pages/Blogs";
 import Resources from "./pages/Resources";
 import AuthRoute from "./Components/AuthRoute";
+import Blog from "./pages/Blog";
 import Auth from "./pages/Auth";
 import "./theme/variables.css";
 import StateHospital from "./pages/SelectedStateHopitalData";
@@ -41,6 +42,7 @@ export default function App() {
 						<Route path='/precautions' component={Precautions} exact />
 						<Route path='/blogs' component={Blogs} exact />
 						<Route path='/state/:stateName' component={StateHospital} exact />
+						<Route path='/blog/:id' component={Blog} exact />
 						<Route exact path='/' render={() => <Redirect to='/cases' />} />
 						<AuthRoute exact path='/auth' component={Auth} />
 					</IonRouterOutlet>
