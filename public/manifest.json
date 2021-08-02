@@ -21,5 +21,7 @@
 	"start_url": ".",
 	"display": "standalone",
 	"theme_color": "#ffffff",
-	"background_color": "#ffffff"
+	"background_color": "#ffffff",
+	"orientation": "portrait",
+	"description": "The most sophisticated application to display the latest Covid-19 records."
 }
