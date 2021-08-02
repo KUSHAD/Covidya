@@ -1,0 +1,7 @@
+{
+  "name": "Covidya",
+  "integrations": {
+		"capacitor": {}
+	},
+  "type": "react"
+}

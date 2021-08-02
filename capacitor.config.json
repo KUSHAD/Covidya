@@ -1,0 +1,6 @@
+{
+  "appId": "app.web.covidya",
+  "appName": "Covidya",
+  "webDir": "build",
+  "bundledWebRuntime": false
+}

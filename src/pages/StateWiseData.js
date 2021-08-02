@@ -11,7 +11,6 @@ import {
 	IonLabel,
 	IonItem,
 	IonText,
-	IonFooter,
 } from "@ionic/react";
 import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
@@ -192,30 +191,6 @@ export default function StateWiseData() {
 					duration={3000}
 					buttons={[{ text: "Close", handler: () => setError("") }]}
 				/>
-				<IonFooter>
-					<div style={{ textAlign: "center" }}>
-						<IonText>
-							Sources :-{" "}
-							<a
-								href='https://covid19.mathdro.id/api/countries/India/confirmed'
-								target='_blank'
-								rel='noreferrer'>
-								https://covid19.mathdro.id/api/countries/India/confirmed
-							</a>{" "}
-							for getting statewise Covid-19 Reports
-							<br />
-							<a
-								href='https://api.opencagedata.com/geocode/v1/json'
-								target='_blank'
-								rel='noreferrer'>
-								https://api.opencagedata.com/geocode/v1/json
-							</a>{" "}
-							for getting user Location
-							<br />
-							Copyright &copy; 2021 Covidya
-						</IonText>
-					</div>
-				</IonFooter>
 			</IonContent>
 		</IonPage>
 	);

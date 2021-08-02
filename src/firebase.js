@@ -12,4 +12,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export const firebaseAuth = firebase.auth;
+
+export const database = {
+	blogs: firebase.firestore().collection("blogs"),
+	timesStamp: firebase.firestore.FieldValue.serverTimestamp,
+};
+
 firebaseAuth().useDeviceLanguage();
