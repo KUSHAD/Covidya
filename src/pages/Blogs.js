@@ -10,9 +10,10 @@ import {
 	IonIcon,
 	IonAlert,
 	IonCard,
-	IonText,
+	IonCardTitle,
 	IonCardContent,
 	IonAvatar,
+	IonSearchbar,
 } from "@ionic/react";
 import { createOutline } from "ionicons/icons";
 import NewBlog from "../Components/NewBlog";
@@ -22,6 +23,7 @@ export default function Blogs() {
 	const [isOpen, setIsOpen] = React.useState(false);
 	const [stories, setStories] = React.useState([]);
 	const [error, setError] = React.useState("");
+	const [search, setSearch] = React.useState("");
 	const history = useHistory();
 	React.useEffect(() => {
 		const fetchStories = async () => {
@@ -54,28 +56,36 @@ export default function Blogs() {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
-				{stories.map((story) => (
-					<IonCard
-						onClick={() => history.push(`/blog/${story.id}`)}
-						key={story.id}>
-						<IonCardContent>
-							<div
-								style={{
-									display: "flex",
-									flexDirection: "row",
-								}}>
-								<IonAvatar>
-									<img src={story.avatar} alt={story.avatar} />
-								</IonAvatar>
-								<IonText>
-									{story.title.length < 35
-										? story.title
-										: story.title.slice(0, 35) + " ....."}
-								</IonText>
-							</div>
-						</IonCardContent>
-					</IonCard>
-				))}
+				<IonSearchbar
+					onIonChange={(e) => setSearch(e.target.value)}
+					value={search}
+					onIonClear={() => setSearch("")}
+					placeholder='Search by Story Titles'
+				/>
+				{stories
+					.filter((story) => story.title.includes(search))
+					.map((story) => (
+						<IonCard
+							onClick={() => history.push(`/blog/${story.id}`)}
+							key={story.id}>
+							<IonCardContent>
+								<div
+									style={{
+										display: "flex",
+										flexDirection: "row",
+									}}>
+									<IonAvatar>
+										<img src={story.avatar} alt={story.avatar} />
+									</IonAvatar>
+									<IonCardTitle>
+										{story.title.length < 35
+											? story.title
+											: story.title.slice(0, 35) + " ....."}
+									</IonCardTitle>
+								</div>
+							</IonCardContent>
+						</IonCard>
+					))}
 				<NewBlog onClose={() => setIsOpen(false)} isOpen={isOpen} />
 				<IonAlert
 					isOpen={error ? true : false}
