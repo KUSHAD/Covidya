@@ -19,7 +19,7 @@ export default function Resources() {
 		<IonPage>
 			<IonHeader>
 				<IonToolbar>
-					<IonTitle>Covid Hospital Stats</IonTitle>
+					<IonTitle>Covid Hospitals</IonTitle>
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>

@@ -24,5 +24,79 @@
 	"theme_color": "#ffffff",
 	"background_color": "#ffffff",
 	"orientation": "portrait",
-	"description": "The most sophisticated application to display the latest Covid-19 records."
+	"description": "The most sophisticated application to display the latest Covid-19 records.",
+	"shortcuts": [
+		{
+			"name": "Global Covid Records",
+			"short_name": "Covid Records",
+			"url": "/cases",
+			"icons": [
+				{
+					"src": "/logo192.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
+			"name": "State Wise Covid Data",
+			"short_name": "States",
+			"url": "/states",
+			"icons": [
+				{
+					"src": "/logo192.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
+			"name": "State Wise Covid Hospital Stats",
+			"short_name": "Hospital Stats",
+			"url": "/resources",
+			"icons": [
+				{
+					"src": "/logo192.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
+			"name": "Covid Precautions",
+			"short_name": "Precautions",
+			"url": "/precautions",
+			"icons": [
+				{
+					"src": "/android-chrome-192x192.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
+			"name": "Covid Stories",
+			"short_name": "View Covid Stories",
+			"url": "/blogs",
+			"icons": [
+				{
+					"src": "/logo192.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
+			"name": "About Us",
+			"short_name": "About Us",
+			"url": "/about",
+			"icons": [
+				{
+					"src": "/logo192.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		}
+	]
 }
