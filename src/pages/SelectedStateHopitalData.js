@@ -20,7 +20,7 @@ import {
 	IonSelectOption,
 } from "@ionic/react";
 import { useParams } from "react-router-dom";
-import { chevronBack, locate } from "ionicons/icons";
+import { chevronBack, locate, call } from "ionicons/icons";
 import { States } from "../utils/States";
 import axios from "axios";
 export default function SelectedStateHopitalData() {
@@ -37,6 +37,7 @@ export default function SelectedStateHopitalData() {
 				const res = await axios.get(url);
 				setHospitals(res.data);
 			} catch (error) {
+				console.log(error);
 				setError(
 					`There was some problem displaying the latest data. ${error.response.data.message}`
 				);
@@ -115,37 +116,43 @@ export default function SelectedStateHopitalData() {
 						}
 					})
 					.map((hospital) => (
-						<IonCard key={hospital.UID}>
-							<IonCardHeader>
-								<IonCardTitle>
-									{stateName === "Bihar" || stateName === "Haryana"
-										? hospital.FACILITY_NAME
-										: hospital.HOSPITAL_NAME}
-								</IonCardTitle>
-								<IonCardSubtitle>
-									{stateName === "Haryana" ? hospital.CITY : hospital.DISTRICT}
-								</IonCardSubtitle>
-							</IonCardHeader>
-							<IonCardContent>
-								<IonButton
-									href={
-										stateName !== "Haryana" &&
-										(stateName === "Uttarakhand" ||
-											stateName === "Andhra Pradesh")
-											? `tel:${hospital.NODAL_OFFICER_CONTACT}`
-											: `tel:${hospital.CONTACT}`
-									}>
-									Call Hospital
-								</IonButton>
-
-								{stateName !== "Andhra Pradesh" && stateName !== "Haryana" ? (
-									<IonButton href={hospital.LOCATION}>
-										<IonIcon icon={locate} /> View Location
+						<>
+							<IonCard key={hospital.UID}>
+								<IonCardHeader>
+									<IonCardTitle>
+										{stateName === "Bihar" || stateName === "Haryana"
+											? hospital.FACILITY_NAME
+											: hospital.HOSPITAL_NAME}
+									</IonCardTitle>
+									<IonCardSubtitle>
+										{stateName === "Haryana"
+											? hospital.CITY
+											: hospital.DISTRICT}
+									</IonCardSubtitle>
+								</IonCardHeader>
+								<IonCardContent>
+									<IonButton
+										href={
+											stateName !== "Haryana" &&
+											(stateName === "Uttarakhand" ||
+												stateName === "Andhra Pradesh")
+												? `tel:${hospital.NODAL_OFFICER_CONTACT}`
+												: `tel:${hospital.CONTACT}`
+										}>
+										<IonIcon icon={call} />
+										Call Hospital
 									</IonButton>
-								) : null}
-							</IonCardContent>
-						</IonCard>
+
+									{stateName !== "Andhra Pradesh" && stateName !== "Haryana" ? (
+										<IonButton href={hospital.LOCATION}>
+											<IonIcon icon={locate} /> View Location
+										</IonButton>
+									) : null}
+								</IonCardContent>
+							</IonCard>
+						</>
 					))}
+
 				<IonAlert
 					isOpen={error ? true : false}
 					buttons={[

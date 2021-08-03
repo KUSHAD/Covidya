@@ -14,11 +14,14 @@ import {
 	IonCardSubtitle,
 } from "@ionic/react";
 import axios from "axios";
-import { Doughnut } from "react-chartjs-2";
+import { Doughnut, Line } from "react-chartjs-2";
 export default function IndiaCase() {
 	const [data, setData] = React.useState();
 	const [global, setGlobal] = React.useState();
 	const [error, setError] = React.useState("");
+	const [newCase, setNewCase] = React.useState();
+	const [dates, setDates] = React.useState([]);
+	const [newDeaths, setNewDeaths] = React.useState();
 	React.useEffect(() => {
 		const fetchDataIndiaData = async () => {
 			try {
@@ -37,6 +40,40 @@ export default function IndiaCase() {
 				const res = await axios.get("https://covid19.mathdro.id/api/");
 				setGlobal(res.data);
 			} catch (error) {
+				console.log(error);
+				setError(
+					`There was some problem displaying the latest data. ${error.response.data.message}`
+				);
+			}
+		};
+		const fetchTrending = async () => {
+			try {
+				const res = await axios.get(
+					`https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/covid-ovid-data/sixmonth/IND`,
+					{
+						headers: {
+							"x-rapidapi-key":
+								"841cfa35bdmsh5d26323217559eap1ac156jsn9a65de2acda3",
+							"x-rapidapi-host":
+								"vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
+						},
+					}
+				);
+				const arranged = res.data.sort((a, b) => {
+					if (a.date < b.date) {
+						return 1;
+					}
+					if (a.date > b.date) {
+						return -1;
+					}
+					return 0;
+				});
+				setNewCase(arranged.map((data) => data.new_cases));
+				setNewDeaths(arranged.map((data) => data.new_deaths));
+				setDates(
+					arranged.map((data) => new Date(data.date).toLocaleDateString())
+				);
+			} catch (error) {
 				setError(
 					`There was some problem displaying the latest data. ${error.response.data.message}`
 				);
@@ -44,6 +81,7 @@ export default function IndiaCase() {
 		};
 		fetchDataIndiaData();
 		fetchGlobalData();
+		fetchTrending();
 	}, []);
 	return (
 		<IonPage>
@@ -131,6 +169,29 @@ export default function IndiaCase() {
 					</IonText>
 				</div>
 				<br />
+				<IonTitle
+					style={{
+						textAlign: "center",
+					}}>
+					Covid Trends
+				</IonTitle>
+				<Line
+					data={{
+						labels: dates,
+						datasets: [
+							{
+								label: "Cases",
+								backgroundColor: ["rgba(0, 0, 255, 0.5)"],
+								data: newCase,
+							},
+							{
+								label: "Deaths",
+								backgroundColor: ["rgba(0, 255, 0, 0.5)"],
+								data: newDeaths,
+							},
+						],
+					}}
+				/>
 				<IonCard>
 					<IonCardHeader>
 						<IonTitle>Covid-19 Precautions</IonTitle>
