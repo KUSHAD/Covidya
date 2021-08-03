@@ -12,11 +12,58 @@
     <title>Covidya</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      div.kushad-custom-wrapper {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div.kushad-custom-spinner-border {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        vertical-align: -.125em;
+        border: .25em solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: .75s linear infinite spinner-border;
+        color: #428cff
+      }
+
+      @keyframes spinner-border {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+    </style>
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <input type="hidden" id="mode" value="%NODE_ENV%">
+    <div id="root">
+      <div class="kushad-custom-wrapper">
+        <div class="kushad-custom-spinner-border"></div>
+      </div>
+    </div>
+    <script>
+      if (document.getElementById("mode").value !== "development") {
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./serviceworker.js')
+              .then((reg) => console.log('Success: ', reg.scope))
+              .catch((err) => console.log('Failure: ', err));
+          })
+        }
+      }
+    </script>
   </body>
 
 </html>

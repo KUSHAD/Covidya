@@ -1,6 +1,12 @@
 {
-  "appId": "app.web.covidya",
-  "appName": "Covidya",
-  "webDir": "build",
-  "bundledWebRuntime": false
+	"appId": "app.web.covidya",
+	"appName": "Covidya",
+	"webDir": "build",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 1
+		}
+	},
+	"cordova": {}
 }
