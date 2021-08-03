@@ -18,7 +18,7 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/typography.css";
 import React from "react";
-import { earth, medkit, book, informationCircleOutline } from "ionicons/icons";
+import { earth, medkit, book, informationCircle} from "ionicons/icons";
 import { Route, Redirect } from "react-router";
 import IndiaCase from "./pages/IndiaCase";
 import Precautions from "./pages/Precautions";
@@ -66,7 +66,7 @@ export default function App() {
 							<IonIcon icon={book} />
 						</IonTabButton>
 						<IonTabButton tab='tab5' href='/about'>
-							<IonIcon icon={informationCircleOutline} />
+							<IonIcon icon={informationCircle} />
 						</IonTabButton>
 					</IonTabBar>
 				</IonTabs>
