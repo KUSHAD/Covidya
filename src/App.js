@@ -18,7 +18,7 @@ import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/typography.css";
 import React from "react";
-import { earth, medkit, book } from "ionicons/icons";
+import { earth, medkit, book, informationCircleOutline } from "ionicons/icons";
 import { Route, Redirect } from "react-router";
 import IndiaCase from "./pages/IndiaCase";
 import Precautions from "./pages/Precautions";
@@ -28,6 +28,7 @@ import Resources from "./pages/Resources";
 import AuthRoute from "./Components/AuthRoute";
 import Blog from "./pages/Blog";
 import Auth from "./pages/Auth";
+import AboutUs from "./pages/AboutUs";
 import "./theme/variables.css";
 import StateHospital from "./pages/SelectedStateHopitalData";
 export default function App() {
@@ -41,6 +42,7 @@ export default function App() {
 						<Route path='/resources' component={Resources} exact />
 						<Route path='/precautions' component={Precautions} exact />
 						<Route path='/blogs' component={Blogs} exact />
+						<Route path='/about' component={AboutUs} exact />
 						<Route path='/state/:stateName' component={StateHospital} exact />
 						<Route path='/blog/:id' component={Blog} exact />
 						<Route exact path='/' render={() => <Redirect to='/cases' />} />
@@ -62,6 +64,9 @@ export default function App() {
 						</IonTabButton>
 						<IonTabButton tab='tab4' href='/blogs'>
 							<IonIcon icon={book} />
+						</IonTabButton>
+						<IonTabButton tab='tab5' href='/about'>
+							<IonIcon icon={informationCircleOutline} />
 						</IonTabButton>
 					</IonTabBar>
 				</IonTabs>

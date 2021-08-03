@@ -12,6 +12,7 @@ import {
 	IonButton,
 	IonCardContent,
 	IonCardSubtitle,
+	IonFooter,
 } from "@ionic/react";
 import axios from "axios";
 import { Doughnut, Line } from "react-chartjs-2";
@@ -225,6 +226,14 @@ export default function IndiaCase() {
 					message={error}
 					duration={3000}
 				/>
+				<IonFooter>
+					<div
+						style={{
+							textAlign: "center",
+						}}>
+						<IonText>© Copyright Covidya 2021</IonText>
+					</div>
+				</IonFooter>
 			</IonContent>
 		</IonPage>
 	);

@@ -8,6 +8,7 @@ import {
 	IonItem,
 	IonText,
 	IonIcon,
+	IonFooter,
 } from "@ionic/react";
 import { chevronForward } from "ionicons/icons";
 import { States } from "../utils/States";
@@ -32,6 +33,14 @@ export default function Resources() {
 						</IonItem>
 					))}
 				</IonList>
+				<IonFooter>
+					<div
+						style={{
+							textAlign: "center",
+						}}>
+						<IonText>© Copyright Covidya 2021</IonText>
+					</div>
+				</IonFooter>
 			</IonContent>
 		</IonPage>
 	);

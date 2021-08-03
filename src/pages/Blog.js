@@ -12,6 +12,8 @@ import {
 	IonCardTitle,
 	IonCardContent,
 	IonAvatar,
+	IonText,
+	IonFooter,
 } from "@ionic/react";
 import { useParams } from "react-router-dom";
 import { database } from "../firebase";
@@ -57,6 +59,14 @@ export default function Blog() {
 						/>
 					</IonCardContent>
 				</IonCard>
+				<IonFooter>
+					<div
+						style={{
+							textAlign: "center",
+						}}>
+						<IonText>© Copyright Covidya 2021</IonText>
+					</div>
+				</IonFooter>
 			</IonContent>
 		</IonPage>
 	);

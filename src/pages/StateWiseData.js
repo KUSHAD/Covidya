@@ -11,6 +11,7 @@ import {
 	IonLabel,
 	IonItem,
 	IonText,
+	IonFooter,
 } from "@ionic/react";
 import { Doughnut } from "react-chartjs-2";
 import axios from "axios";
@@ -191,6 +192,14 @@ export default function StateWiseData() {
 					duration={3000}
 					buttons={[{ text: "Close", handler: () => setError("") }]}
 				/>
+				<IonFooter>
+					<div
+						style={{
+							textAlign: "center",
+						}}>
+						<IonText>© Copyright Covidya 2021</IonText>
+					</div>
+				</IonFooter>
 			</IonContent>
 		</IonPage>
 	);

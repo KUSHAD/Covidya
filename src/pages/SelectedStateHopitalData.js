@@ -18,6 +18,8 @@ import {
 	IonLabel,
 	IonSelect,
 	IonSelectOption,
+	IonFooter,
+	IonText,
 } from "@ionic/react";
 import { useParams } from "react-router-dom";
 import { chevronBack, locate, call } from "ionicons/icons";
@@ -165,6 +167,14 @@ export default function SelectedStateHopitalData() {
 					message={error}
 					duration={3000}
 				/>
+				<IonFooter>
+					<div
+						style={{
+							textAlign: "center",
+						}}>
+						<IonText>© Copyright Covidya 2021</IonText>
+					</div>
+				</IonFooter>
 			</IonContent>
 		</IonPage>
 	);

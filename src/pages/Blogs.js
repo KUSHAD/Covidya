@@ -14,6 +14,8 @@ import {
 	IonCardContent,
 	IonAvatar,
 	IonSearchbar,
+	IonFooter,
+	IonText,
 } from "@ionic/react";
 import { createOutline } from "ionicons/icons";
 import NewBlog from "../Components/NewBlog";
@@ -94,6 +96,14 @@ export default function Blogs() {
 					duration={3000}
 					buttons={[{ text: "Close", handler: () => setError("") }]}
 				/>
+				<IonFooter>
+					<div
+						style={{
+							textAlign: "center",
+						}}>
+						<IonText>© Copyright Covidya 2021</IonText>
+					</div>
+				</IonFooter>
 			</IonContent>
 			<IonFab vertical='bottom' horizontal='end'>
 				<IonFabButton onClick={() => setIsOpen(true)}>
