@@ -146,7 +146,10 @@ export default function SelectedStateHopitalData() {
 									</IonButton>
 
 									{stateName !== "Andhra Pradesh" && stateName !== "Haryana" ? (
-										<IonButton href={hospital.LOCATION}>
+										<IonButton
+											target='_blank'
+											rel='noreferrer'
+											href={hospital.LOCATION}>
 											<IonIcon icon={locate} /> View Location
 										</IonButton>
 									) : null}

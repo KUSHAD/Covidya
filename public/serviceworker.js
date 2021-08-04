@@ -1,4 +1,4 @@
-const CACHE_NAME = "version-6";
+const CACHE_NAME = "version-7";
 const urlsToCache = [
 	"index.html",
 	"offline.html",
@@ -9,6 +9,7 @@ const urlsToCache = [
 	"/auth",
 	"/precautions",
 	"/about",
+	"/o2",
 	"https://res.cloudinary.com/dlgu8heb4/image/upload/v1628013374/20210803_232133_h8mno8.jpg",
 	"https://res.cloudinary.com/dlgu8heb4/image/upload/v1628012832/23_nytf3b.jpg",
 	"https://rachitcoderai.github.io/precautionsCovid/precaution.html",
