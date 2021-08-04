@@ -16,7 +16,7 @@ export const vendors = [
 	{
 		si: "3",
 		NAME: "Oxygen Supplier",
-		ph_no: "9434577037/9332301092",
+		ph_no: "9434577037",
 		LOCATION: "Asansol, Rambandhu Talaw",
 		TYPE: "Refill",
 	},
@@ -149,14 +149,14 @@ export const vendors = [
 	{
 		si: "22",
 		NAME: "Govt Helpline",
-		ph_no: "9674076299/ 9804279848/8961030129",
+		ph_no: "9674076299",
 		LOCATION: "Behala West",
 		TYPE: "No information available",
 	},
 	{
 		si: "23",
 		NAME: "Govt O2 Control Room",
-		ph_no: "7596056444/ 7596056443",
+		ph_no: "7596056444",
 		LOCATION: "No information available",
 		TYPE: "Patient Name, Adhaar No, Prescription required",
 	},
@@ -184,7 +184,7 @@ export const vendors = [
 	{
 		si: "27",
 		NAME: "Jivan Deep",
-		ph_no: "033 2475 4628?",
+		ph_no: "03324754628",
 		LOCATION: "Behala",
 		TYPE: "Cylinder",
 	},
@@ -212,7 +212,7 @@ export const vendors = [
 	{
 		si: "31",
 		NAME: "M Oxygen",
-		ph_no: "97499 22614",
+		ph_no: "9749922614",
 		LOCATION: "Baranagar",
 		TYPE: "Cylinder",
 	},
@@ -254,7 +254,7 @@ export const vendors = [
 	{
 		si: "37",
 		NAME: "Medish (Sayan Das)",
-		ph_no: "79806 36271",
+		ph_no: "7980636271",
 		LOCATION: "No information available",
 		TYPE: "No information available",
 	},
@@ -303,7 +303,7 @@ export const vendors = [
 	{
 		si: "44",
 		NAME: "Niramoy Medicine",
-		ph_no: "9748428821 / 8420083427",
+		ph_no: "9748428821",
 		LOCATION: "Kundghat",
 		TYPE: "Cylinder",
 	},
@@ -373,7 +373,7 @@ export const vendors = [
 	{
 		si: "54",
 		NAME: "Blue Print / Shaheb",
-		ph_no: "83348 05171",
+		ph_no: "8334805171",
 		LOCATION: "Ballygunj Place (OXYMETER)",
 		TYPE: "Oxymeter N Other",
 	},
@@ -611,7 +611,7 @@ export const vendors = [
 	{
 		si: "88",
 		NAME: "Argha Das",
-		ph_no: "98369 58081",
+		ph_no: "9836958081",
 		LOCATION: "Baranagar",
 		TYPE: "Cylinder",
 	},
@@ -667,7 +667,7 @@ export const vendors = [
 	{
 		si: "96",
 		NAME: "Oxygen Supplier",
-		ph_no: "9113664101, 6290490078",
+		ph_no: "9113664101",
 		LOCATION: "Shyamnagar",
 		TYPE: "Cylinder / Cans For Rs. 1700",
 	},
@@ -702,7 +702,7 @@ export const vendors = [
 	{
 		si: "101",
 		NAME: "Oxyline Services",
-		ph_no: "9143480006/5/8",
+		ph_no: "9143480006",
 		LOCATION: "South Kolkata",
 		TYPE: "Cylinder/Refill",
 	},
@@ -800,7 +800,7 @@ export const vendors = [
 	{
 		si: "115",
 		NAME: "Suman Oxygen Suppliers",
-		ph_no: "9333846649 / And Raju Da : 7076787565",
+		ph_no: "9333846649",
 		LOCATION: "Tamluk, Purba Medinipur",
 		TYPE: "Cylinder",
 	},
@@ -834,7 +834,7 @@ export const vendors = [
 	{
 		si: "120",
 		NAME: "Swapan Panda",
-		ph_no: "8017711721 / 9143480005",
+		ph_no: "8017711721",
 		LOCATION: "Baghajatin, Jadavpur",
 		TYPE: "Refill Done",
 	},
@@ -961,7 +961,7 @@ export const vendors = [
 	{
 		si: "138",
 		NAME: "Sayani Bhattacharya",
-		ph_no: "97486 83892",
+		ph_no: "9748683892",
 		LOCATION: "Baghajatin",
 		TYPE: "Cylinder",
 	},
@@ -975,7 +975,7 @@ export const vendors = [
 	{
 		si: "140",
 		NAME: "Nekita Dhawan",
-		ph_no: "99033 23331",
+		ph_no: "9903323331",
 		LOCATION: "Tollygunge , New Alipur Behala",
 		TYPE: "Oxygen Cans 6ltrs",
 	},
