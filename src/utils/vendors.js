@@ -1,4 +1,4 @@
-﻿export const vendors = [
+export const vendors = [
 	{
 		si: "1",
 		NAME: "Kundu Pharmacy",
