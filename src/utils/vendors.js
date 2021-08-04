@@ -1,4 +1,4 @@
-﻿export const O2_Vendors = [
+﻿export const vendors = [
 	{
 		si: "1",
 		NAME: "Kundu Pharmacy",

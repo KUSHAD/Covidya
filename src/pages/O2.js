@@ -13,7 +13,7 @@ import {
 	IonFooter,
 	IonIcon,
 } from "@ionic/react";
-import { O2_Vendors } from "../utils/vendors";
+import { vendors } from "../utils/vendors";
 import { call } from "ionicons/icons";
 
 export default function O2() {
@@ -25,7 +25,7 @@ export default function O2() {
 				</IonToolbar>
 			</IonHeader>
 			<IonContent>
-				{O2_Vendors.map((vender) => (
+				{vendors.map((vender) => (
 					<IonCard key={vender.si}>
 						<IonCardHeader>
 							<IonCardTitle>{vender.NAME}</IonCardTitle>
