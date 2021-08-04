@@ -87,6 +87,18 @@
 			]
 		},
 		{
+			"name": "Oxygen Vendors",
+			"short_name": "O2",
+			"url": "/o2",
+			"icons": [
+				{
+					"src": "/logo192.png",
+					"sizes": "192x192",
+					"type": "image/png"
+				}
+			]
+		},
+		{
 			"name": "About Us",
 			"short_name": "About Us",
 			"url": "/about",
